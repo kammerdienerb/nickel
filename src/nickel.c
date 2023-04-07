@@ -7,9 +7,11 @@
  */
 
 
+#define _GNU_SOURCE
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdint.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -231,8 +233,8 @@ static const char *cursor;
 static unsigned line = 1;
 
 /* Set up some things for a hash_table, which we'll use as a symbol table. */
-static unsigned long long str_hash(const char *s) {
-    unsigned long long hash = 5381;
+static uint64_t str_hash(const char *s) {
+    uint64_t hash = 5381;
     int c;
 
     while ((c = *s++))
