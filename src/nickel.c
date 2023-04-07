@@ -202,8 +202,9 @@ static char *node_to_string(Node *node) {
     array_t chars;
 
     chars = array_make(char);
-    array_zero_term(chars);
     _node_to_string(&chars, node);
+
+    array_zero_term(chars);
 
     return array_data(chars);
 }
