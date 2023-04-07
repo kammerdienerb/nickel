@@ -12,8 +12,10 @@ parser, tree-walking interpreter, and dynamic type checker.
 
 ## Building
 ```bash
-./build.sh```
+./build.sh
+```
 
 ## Running
 ```bash
-./nickel examples/hello.nickel```
+./nickel examples/hello.nickel
+```
