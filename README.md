@@ -8,7 +8,7 @@ parser, tree-walking interpreter, and dynamic type checker.
 
 ## Requirements
 - A POSIX environment.
-- GCC supporting the C99 standard. (`clang` surely work, but the build script uses `gcc`.)
+- GCC supporting the C99 standard. (`clang` will surely work, but the build script uses `gcc`.)
 
 ## Building
 ```bash
