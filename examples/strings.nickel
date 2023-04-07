@@ -1,0 +1,8 @@
+[define rep ;; str n
+    [if [== :2 0]
+        ""
+        [fmt "{}{}" :1 [rep :1 [- :2 1]]]]]
+
+[print [rep "abc" 5]]
+
+;; more built in string functions would be nice

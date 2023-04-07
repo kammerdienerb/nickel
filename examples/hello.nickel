@@ -1,0 +1,4 @@
+[pfmt "Hello, {}\n"
+    [if [% [rand] 2]
+        "world!"
+        "is there anybody out there?"]]

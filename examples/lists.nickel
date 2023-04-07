@@ -1,0 +1,24 @@
+[define print-len ;; list
+     [pfmt "length of {} is {}\n" :1 [len :1]]]
+
+[print-len [list 1 2 3]]
+
+[define random-list ;; n lim
+    [if [== :1 0]
+        [list]
+        [append [list [% [rand] :2]]
+                [random-list [- :1 1] :2]]]]
+
+[print-len [random-list 10 1000]]
+
+[define print-parts ;; list
+    [pfmt "car: {}\ncdr: {}\n" [car :1] [cdr :1]]]
+
+[print-parts [list 1 2 3 5 8 13]]
+
+[define elem ;; list n
+    [if [== :2 0]
+        [car :1]
+        [elem [cdr :1] [- :2 1]]]]
+
+[print [elem [list 2 4 6 8 10 12] 3]]

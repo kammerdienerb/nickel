@@ -1,0 +1,26 @@
+[define merge-sort
+    [define split
+        [define split-rec
+            [if [>= [len [car :1]] [len [car [cdr :1]]]]
+                :1
+                [split-rec [list [append [car :1] [list [car [car [cdr :1]]]]] [cdr [car [cdr :1]]]]]]]
+        [split-rec [list [list [car :1]] [cdr :1]]]]
+
+    [define merge
+        [if [== [len :1] 0] :2
+        [if [== [len :2] 0] :1
+        [if [< [car :1] [car :2]]
+            [append [list [car :1]] [merge [cdr :1] :2]]
+            [append [list [car :2]] [merge :1 [cdr :2]]]]]]]
+
+    [if [<= [len :1] 1] :1
+        [[define merge-sort-split
+            [merge [merge-sort [car :1]] [merge-sort [car [cdr :1]]]]]
+          [split :1]]]]
+
+[define rand-list
+    [if [== :1 0]
+        [list]
+        [append [list [% [rand] 1000]] [rand-list [- :1 1]]]]]
+
+[print [merge-sort [rand-list 50]]]
